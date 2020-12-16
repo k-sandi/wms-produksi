@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('MainPage.home');
 });
+
+Route::prefix('gudang')->group(function(){
+
+    Route::get('/', 'GudangController@index');
+    Route::get('/create', 'GudangController@create');
+    Route::post('/store', 'GudangController@store');
+    Route::get('/edit/{id}', 'GudangController@edit');
+    Route::post('/update', 'GudangController@update');
+    Route::get('/delete/{id}', 'GudangController@destroy');
+
+});

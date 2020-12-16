@@ -17,6 +17,13 @@ Vertical Nav -->
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
                         </li>
+
+                        <li class="nav-item {{ Request::path() === 'gudang' ? 'active' : ''}}">
+                            <a class="nav-link" href="{{ url('/gudang') }}" >
+                                <span class="feather-icon"><i data-feather="archive"></i></span>
+                                <span class="nav-link-text">Gudang</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

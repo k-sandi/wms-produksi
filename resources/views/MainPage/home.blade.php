@@ -13,7 +13,7 @@
 
       <!-- Row -->
       <div class="row">
-              <div class="col-xl-12">
+              <!-- <div class="col-xl-12">
                   <div class="hk-row">
                       <div class="col-xl-4">
                           <div class="card-group hk-dash-type-2">
@@ -46,7 +46,8 @@
                           </div>
                       </div>
                   </div>
-              </div>
+              </div> -->
+              
       </div>
       <!-- /Row -->
   </div>
