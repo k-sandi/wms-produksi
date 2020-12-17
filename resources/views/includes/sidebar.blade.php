@@ -24,6 +24,13 @@ Vertical Nav -->
                                 <span class="nav-link-text">Gudang</span>
                             </a>
                         </li>
+
+                        <li class="nav-item {{ Request::path() === 'produk' ? 'active' : ''}}">
+                            <a class="nav-link" href="{{ url('/produk') }}" >
+                                <span class="feather-icon"><i data-feather="box"></i></span>
+                                <span class="nav-link-text">Produk</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
