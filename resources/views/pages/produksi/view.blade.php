@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Stok Gudang Page')
+@section('title','Produksi Page')
 @prepend('add-style')
 
 @endprepend
@@ -9,7 +9,7 @@
         <nav class="hk-breadcrumb" aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-light bg-transparent">
                 <li class="breadcrumb-item active" aria-current="page">
-                    Stok Gudang
+                    Produksi
                 </li>
             </ol>
         </nav>
@@ -20,12 +20,12 @@
 
             <!-- Title -->
             <div class="hk-pg-header">
-                <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="server"></i></span></span>List Stok Gudang</h4>
+                <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="server"></i></span></span>List Produksi</h4>
             </div>
             <!-- /Title -->
 
             <!-- Row -->
-            <a href="{{ url('/stok/create') }}" class="btn btn-primary btn-sm mb-3">Add Data <i class="fa fa-plus-circle"></i> </a>
+            <a href="{{ url('/produksi/create') }}" class="btn btn-primary btn-sm mb-3">Add Data <i class="fa fa-plus-circle"></i> </a>
             <div class="row">
                 <div class="col-xl-12">
                     <section class="hk-sec-wrapper">
@@ -52,9 +52,10 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID Produksi</th>
+                                                <th>Tanggal Produksisi</th>
                                                 <th>Nama Gudang</th>
-                                                <th>Nama Produk</th>
-                                                <th>Jenis Produk</th>
+                                                <th>Nama Produksi</th>
                                                 <th>Qty</th>
                                                 <th>Action</th>
                                             </tr>
@@ -63,15 +64,16 @@
                                             @php
                                                 $no = 1;
                                             @endphp
-                                            @foreach($stok as $s)
+                                            @foreach($produksi as $p)
                                             <tr>
                                                 <td>{{ $no++ }}</td>
-                                                <td>{{ ucwords($s->gudang) }}</td>
-                                                <td>{{ ucwords($s->produk) }}</td>
-                                                <td>{{ ucwords($s->jenis) }}</td>
-                                                <td>{{ $s->stok }}</td>
+                                                <td>{{ $p->id }}</td>
+                                                <td>{{ $p->created_at }}</td>
+                                                <td>{{ ucwords($p->gudang) }}</td>
+                                                <td>{{ ucwords($p->Produksi) }}</td>
+                                                <td>{{ ucwords($p->qty_Produksisi) }}</td>
                                                 <td>
-                                                    <a href="stok/show/{{ $s->id }}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i> Detail</a>
+                                                    <a href="produksisi/show/{{ $p->id }}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i> Detail</a>
                                                 </td>
                                             </tr>
                                             @endforeach

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Stok;
+use App\Models\Produk;
+use App\Models\Gudang;
 
 class StokController extends Controller
 {
@@ -31,7 +33,11 @@ class StokController extends Controller
      */
     public function create()
     {
-        //
+        $gudang = Gudang::all();
+        
+        $produk = Produk::all();
+
+        return view('pages.stok.create', compact('gudang','produk'));
     }
 
     /**
@@ -42,7 +48,20 @@ class StokController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'gudang' => 'required',
+            'produk' => 'required',
+            'qty' => 'required',
+        ]);
+
+        Stok::insert([
+            'id_gudang' => $request->gudang,
+            'id_produk' => $request->produk,
+            'stok' => $request->qty,
+            'created_at' => now()
+        ]);
+
+        return redirect('/stok')->with('add','Berhasil tambah data!');
     }
 
     /**

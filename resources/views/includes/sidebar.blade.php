@@ -38,6 +38,13 @@ Vertical Nav -->
                             </a>
                         </li>
 
+                        <li class="nav-item {{ Request::path() === 'produksi' ? 'active' : ''}}">
+                            <a class="nav-link" href="{{ url('/produksi') }}" >
+                                <span class="feather-icon"><i data-feather="command"></i></span>
+                                <span class="nav-link-text">Produksi</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

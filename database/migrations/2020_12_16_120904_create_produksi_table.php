@@ -15,11 +15,11 @@ class CreateProduksiTable extends Migration
     {
         Schema::create('produksi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_produk_mentah');
-            $table->foreign('id_produk_mentah')->references('id')->on('produk')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('id_gudang');
+            $table->foreign('id_gudang')->references('id')->on('gudang')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id_produk_jadi');
             $table->foreign('id_produk_jadi')->references('id')->on('produk')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('qty');
+            $table->integer('qty_produksi');
             $table->timestamps();
         });
     }

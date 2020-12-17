@@ -42,5 +42,19 @@ Route::prefix('stok')->group(function(){
 
     Route::get('/', 'StokController@index');
     Route::get('/show/{id}', 'StokController@show');
+    Route::get('/create', 'StokController@create');
+    Route::post('/store', 'StokController@store');
+
+});
+
+Route::prefix('produksi')->group(function(){
+
+    Route::get('/', 'ProduksiController@index');
+    Route::get('/create', 'ProduksiController@create');
+    Route::post('/store', 'ProduksiController@store');
+    Route::get('/show/{id}', 'ProduksiController@show');
+    Route::get('/edit/{id}', 'ProduksiController@edit');
+    Route::post('/update', 'ProduksiController@update');
+    Route::get('/delete/{id}', 'ProduksiController@destroy');
 
 });
