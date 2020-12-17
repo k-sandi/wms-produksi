@@ -10,7 +10,6 @@ Vertical Nav -->
                     </div> --}}
                     <ul class="navbar-nav flex-column">
 
-
                         <li class="nav-item {{ Request::path() === 'dashboard' ? 'active' : ''}}">
                             <a class="nav-link" href="#" >
                                 <span class="feather-icon"><i data-feather="home"></i></span>
@@ -31,6 +30,14 @@ Vertical Nav -->
                                 <span class="nav-link-text">Produk</span>
                             </a>
                         </li>
+
+                        <li class="nav-item {{ Request::path() === 'stok' ? 'active' : ''}}">
+                            <a class="nav-link" href="{{ url('/stok') }}" >
+                                <span class="feather-icon"><i data-feather="grid"></i></span>
+                                <span class="nav-link-text">Stok</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

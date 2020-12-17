@@ -40,12 +40,7 @@ Route::prefix('produk')->group(function(){
 
 Route::prefix('stok')->group(function(){
 
-    Route::get('/', 'ProdukController@index');
-    Route::get('/create', 'ProdukController@create');
-    Route::post('/store', 'ProdukController@store');
-    Route::get('/show/{id}', 'ProdukController@show');
-    Route::get('/edit/{id}', 'ProdukController@edit');
-    Route::post('/update', 'ProdukController@update');
-    Route::get('/delete/{id}', 'ProdukController@destroy');
+    Route::get('/', 'StokController@index');
+    Route::get('/show/{id}', 'StokController@show');
 
 });
