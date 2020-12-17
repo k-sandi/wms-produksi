@@ -7,6 +7,7 @@ use App\Models\Produksi;
 use App\Models\ProduksiDetail;
 use App\Models\Gudang;
 use App\Models\Produk;
+use App\Models\Stok;
 
 class ProduksiController extends Controller
 {
@@ -52,7 +53,27 @@ class ProduksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'produk' => 'required',
+            'gudang' => 'required',
+            'qty' => 'required',
+        ]);
+
+        $produksi = new Produksi;
+        $produksi->id_gudang = $request->input('gudang');
+        $produksi->id_produk_jadi = $request->input('produk');
+        $produksi->qty_produksi = $request->input('qty');
+        $produksi->created_at = now();
+        $produksi->save();
+
+        $produksi = new Stok;
+        $produksi->id_gudang = $request->input('gudang');
+        $produksi->id_produk = $request->input('produk');
+        $produksi->stok = $request->input('qty');
+        $produksi->created_at = now();
+        $produksi->save();
+
+        return redirect('/produksi')->with('add','Berhasil tambah data!');
     }
 
     /**

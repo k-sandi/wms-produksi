@@ -67,7 +67,7 @@
                                             <input type="number" name="qty" id="qty" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-form-label col-md-2 col-sm-3">Raw Meterial 1</label>
                                         <div class="col-md-4 col-sm-4">
                                             <select name="raw1" id="raw1" class="form-control custom-select">
@@ -94,7 +94,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <input type="number" name="rqty2" id="rqty2" class="form-control">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <button class="btn btn-success mt-5" type="submit">Tambah Data</button>
                                 </form>
                             </div>
