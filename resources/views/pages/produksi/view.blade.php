@@ -53,9 +53,9 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>ID Produksi</th>
-                                                <th>Tanggal Produksisi</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Nama Gudang</th>
-                                                <th>Nama Produksi</th>
+                                                <!-- <th>Nama Produksi</th> -->
                                                 <th>Qty</th>
                                                 <th>Action</th>
                                             </tr>
@@ -70,8 +70,8 @@
                                                 <td>{{ $p->id }}</td>
                                                 <td>{{ $p->created_at }}</td>
                                                 <td>{{ ucwords($p->gudang) }}</td>
-                                                <td>{{ ucwords($p->Produksi) }}</td>
-                                                <td>{{ ucwords($p->qty_Produksisi) }}</td>
+                                                <!-- <td>{{ ucwords($p->Produksi) }}</td> -->
+                                                <td>{{ ucwords($p->qty_produksi) }}</td>
                                                 <td>
                                                     <a href="produksisi/show/{{ $p->id }}" class="btn btn-info btn-sm"><i class="fa fa-eye"></i> Detail</a>
                                                 </td>

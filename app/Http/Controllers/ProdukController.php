@@ -18,7 +18,7 @@ class ProdukController extends Controller
         $produk = Produk::join('jenis_produk','produk.id_jenis_produk','=','jenis_produk.id')
                         ->select('produk.id','produk.name','produk.id_jenis_produk','jenis_produk.name as jenis')
                         ->get();
-
+        
         return view('pages.produk.view', compact('produk'));
     }
 
